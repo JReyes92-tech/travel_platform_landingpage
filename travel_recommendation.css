@@ -12,10 +12,20 @@ nav {
     justify-content: space-between;
 }
 
+.nav-links {
+    display: flex;
+    gap: 75px;
+}
+
 nav a {
     text-decoration: none;
     color: white;
     font-weight: bold;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
 }
 
 .logo h1 {
@@ -29,4 +39,41 @@ nav a {
     height: 45px;
     object-fit: contain;
     border-radius: 5px;
+}
+
+.search {
+    display: flex;
+    align-items: center;
+    background-color: white;
+    border-radius: 20px;
+    padding: 8px 12px;
+    width: 420px;
+}
+
+.search input {
+    flex: 1;
+    border: none;
+    outline: none;
+    padding: 8px;
+}
+
+.search button {
+    border: none;
+    padding: 8px 12px;
+    background-color: rgb(1, 139, 1);
+    color: white;
+    border-radius: 15px;
+    cursor: pointer;
+}
+
+#btnReset {
+    margin-left: 10px;
+}
+
+.search button:hover {
+    background-color: #e24414;
+}
+
+.search span {
+    font-size: 20px;
 }
