@@ -77,3 +77,51 @@ nav a {
 .search span {
     font-size: 20px;
 }
+
+.page-container {
+    background-image: url(City.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    min-height: 600px;
+
+    padding: 40px;
+}
+
+.social-media {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.social-media img {
+    width: 25px;
+    height: 25px;
+    object-fit: contain;
+}
+
+.home-content {
+    margin-left: 50px;
+    color: white;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.home-content h2 {
+    font-size: 50px;
+    transform: translateY(-155px);
+}
+
+.home-content p {
+    transform: translateY(-140px);
+    text-align: justify;
+}
+
+.about-content {
+    margin-left: 80px;
+    color: white;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.about-content h2 {
+    font-size: 50px;
+}
