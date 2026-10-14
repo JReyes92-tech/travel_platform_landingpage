@@ -117,11 +117,17 @@ nav a {
 }
 
 .about-content {
-    margin-left: 80px;
+    margin-left: 50px;
     color: white;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
 .about-content h2 {
+    transform: translateY(-50px);
     font-size: 50px;
+}
+
+.about-content p {
+    transform: translateY(-30px);
+    text-align: justify;
 }
