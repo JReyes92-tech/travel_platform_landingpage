@@ -221,21 +221,76 @@ nav a {
 .contactForm-container {
     display: flex;
     flex-direction: column;
-    align-items: center;
     min-height: 500px;
     padding-top: 100px;
-    margin-left: 100px;
-    margin-top: -200px;
+    margin-left: 1000px;
+    margin-top: -350px;
+    width: 600px;
 }
 
-.name {
+.contactForm-container input {
+    background-color: rgba(255, 255, 255, 0.15);
+    color: white;
+    font-weight: bold;
+    font-family: Arial, Helvetica, sans-serif;
+    width: 100%;
+    padding: 5px;
+    font-size: 16px;
+    border: 1px solid white;
+    border-radius: 5px;
+    outline: none;
+}
+
+.contactForm-container textarea {
+    background-color: rgba(255, 255, 255, 0.15);
+    color: white;
+    font-weight: bold;
+    font-family: Arial, Helvetica, sans-serif;
+    width: 100%;
+    padding: 15px;
+    font-size: 16px;
+    border: 1px solid white;
+    border-radius: 5px;
+    resize: vertical;
+}
+
+.contactForm-container label {
+    color: white;
+    font-weight: bold;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.contactForm-container ::placeholder {
     color: white;
 }
 
-.email {
-    color: white;
-}
-
+.name,
+.email,
 .message {
+    display: flex;
+    flex-direction: column;
     color: white;
+    gap: 8px;
+}
+
+.contactForm-container button {
+    width: 100%;
+    padding: 10px;
+    margin-top: 10px;
+
+    background-color: rgb(2, 142, 167);
+    color: white;
+    font-size: 16px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+
+    border: none;
+    border-radius: 5px;
+
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.contactForm-container button :hover{
+    background-color: #e24414;
 }
