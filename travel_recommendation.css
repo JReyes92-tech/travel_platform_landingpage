@@ -294,3 +294,8 @@ nav a {
 .contactForm-container button :hover{
     background-color: #e24414;
 }
+
+.recommendations {
+    display: none;
+    color: white;
+}
