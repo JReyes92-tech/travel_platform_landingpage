@@ -296,6 +296,27 @@ nav a {
 }
 
 .recommendations {
-    display: none;
+    min-height: 500px;
+    padding-top: 100px;
+}
+
+.recommendations h2 {
+    font-size: 50px;
+    color: white;
+    font-weight: bold;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.recommendationsResults {
+    display: flex;
+    flex-direction: column;
     color: white;
 }
+
+.recommendation-card {
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 10px;
+    padding: 15px;
+    width: 300px;
+}
+
