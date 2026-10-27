@@ -13,6 +13,7 @@ const resultDiv = document.getElementById('recommendationsResults');
 const homeLink = document.getElementById("homeLink");
 const aboutLink = document.getElementById("aboutLink");
 const contactLink = document.getElementById("contactLink");
+const search = document.getElementById("search");
 
 const searchMappings= {
     beach: "beaches",
@@ -56,7 +57,7 @@ function travelRecommendations () {
      *That way, the newest value is read on every search.
      */
 
-    const input = recommendationInput.value.toLowerCase().trim();
+    const input = recommendationsInput.value.toLowerCase().trim();
 
     resultDiv.innerHTML = "";
 
@@ -177,17 +178,19 @@ function showNormalPage() {
 btnSearch.addEventListener("click", travelRecommendations);
 
 btnReset.addEventListener("click", function() {
-    recommendationInput.value = "";
+    recommendationsInput.value = "";
     resultDiv.innerHTML = "";
     showNormalPage();
 });
 
 homeLink.addEventListener("click", function () {
     showNormalPage();
+    search.style.display = "flex";
 });
 
 aboutLink.addEventListener("click", function() {
     showNormalPage();
+    search.style.display = "none";
 });
 
 contactLink.addEventListener("click", function() {
