@@ -41,7 +41,7 @@ fetch('travel_recommendation_api.json')
             throw new Error("The JSON file could not be loaded");
         }
 
-        return Response.json();
+        return response.json();
     })
     .then(data => {
          travelData = data;
@@ -117,28 +117,38 @@ function displayCountry(country) {
 }
 
 function displayTemples(temples){
-    const heading = document.createElement("h3");
-    heading.textContent = "TEMPLES";
+    const heading = document.createElement("h2");
+    heading.textContent = "Search Results";
 
     resultDiv.appendChild(heading);
 
+    const cardsContainer = document.createElement("div");
+    cardsContainer.classList.add("cards-container");
+
     temples.forEach(temple => {
-        createRecommendationCard(temple);
+        createRecommendationCard(temple, cardsContainer);
     });
+
+    resultDiv.appendChild(cardsContainer);
 }
 
 function displayBeaches(beaches) {
-    const heading = document.createElement("h3");
-    heading.textContent = "BEACHES";
+    const heading = document.createElement("h2");
+    heading.textContent = "Search Results";
 
     resultDiv.appendChild(heading);
 
+    const cardsContainer = document.createElement("div");
+    cardsContainer.classList.add("cards-container");
+
     beaches.forEach(beach => {
-        createRecommendationCard(beach);
+        createRecommendationCard(beach, cardsContainer);
     });  
+
+    resultDiv.appendChild(cardsContainer);
 }
 
-function createRecommendationCard(destination){
+function createRecommendationCard(destination, container){
     const card = document.createElement("div");
     card.classList.add("recommendation-card");
 
@@ -156,7 +166,7 @@ function createRecommendationCard(destination){
     card.appendChild(name);
     card.appendChild(description);
 
-    resultDiv.appendChild(card);
+    container.appendChild(card);
 }
 
 function showRecommendationsView() {
@@ -175,6 +185,10 @@ function showNormalPage() {
     recommendations.style.display = "none";
 }
 
+function thankyou(){
+    alert("Thanks for submit your response. We will contact you");
+}
+
 btnSearch.addEventListener("click", travelRecommendations);
 
 btnReset.addEventListener("click", function() {
@@ -185,12 +199,12 @@ btnReset.addEventListener("click", function() {
 
 homeLink.addEventListener("click", function () {
     showNormalPage();
-    search.style.display = "flex";
+    search.style.visibility = "visible";
 });
 
 aboutLink.addEventListener("click", function() {
     showNormalPage();
-    search.style.display = "none";
+    search.style.visibility = "hidden";
 });
 
 contactLink.addEventListener("click", function() {
