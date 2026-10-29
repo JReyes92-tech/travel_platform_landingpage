@@ -15,6 +15,8 @@ const aboutLink = document.getElementById("aboutLink");
 const contactLink = document.getElementById("contactLink");
 const search = document.getElementById("search");
 
+const mexicoTime = document.getElementById('mexicoTime');
+
 const searchMappings= {
     beach: "beaches",
     beaches: "beaches",
@@ -78,6 +80,10 @@ function travelRecommendations () {
     showRecommendationsView();
 
     if (searchTerm === "countries"){
+        const heading = document.createElement("h2");
+        heading.textContent = "Search Results";
+    
+        resultDiv.appendChild(heading);
         displayCountries();
     } else if (searchTerm === "temples") {
         displayTemples(travelData.temples);
@@ -88,10 +94,6 @@ function travelRecommendations () {
 
 function displayCountries() {
     const currentPair = countryPairs[searchCount];
-
-    const heading = document.createElement("h2");
-    heading.textContent = "Country Recommendations";
-    resultDiv.appendChild(heading);
 
     currentPair.forEach(countryName => {
       const country = travelData.countries.find(country => country.name.toLowerCase() === countryName.toLowerCase());
@@ -111,9 +113,14 @@ function displayCountry(country) {
 
     resultDiv.appendChild(countryHeading);
 
+    const cardsContainer = document.createElement("div");
+    cardsContainer.classList.add("cards-container");
+
     country.cities.forEach(city => {
-        createRecommendationCard(city);
-    })
+        createRecommendationCard(city, cardsContainer);
+    });
+
+    resultDiv.appendChild(cardsContainer);
 }
 
 function displayTemples(temples){
@@ -189,6 +196,23 @@ function thankyou(){
     alert("Thanks for submit your response. We will contact you");
 }
 
+function updateMexicoTime() {
+    const options = {
+        timeZone: 'America/Mexico_City',
+        year: 'numeric',
+        month: 'long',
+        day: 'numeric',
+        hour12: true,
+        hour: 'numeric',
+        minute: 'numeric',
+        second: 'numeric'
+    };
+    
+    const mexicoCityDateTime = new Date().toLocaleString('en-Us', options);
+    
+    mexicoTime.textContent = `Mexico City: ${mexicoCityDateTime}`;
+}
+
 btnSearch.addEventListener("click", travelRecommendations);
 
 btnReset.addEventListener("click", function() {
@@ -209,4 +233,9 @@ aboutLink.addEventListener("click", function() {
 
 contactLink.addEventListener("click", function() {
     showNormalPage();
+    search.style.visibility = "visible";
 });
+
+updateMexicoTime();
+
+setInterval(updateMexicoTime, 1000);

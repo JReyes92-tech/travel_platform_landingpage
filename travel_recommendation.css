@@ -308,21 +308,30 @@ nav a {
 }
 .recommendationsResults h2 {
     margin-bottom: 20px;
+    margin-left: 50px;
+    font-weight: bold;
+    font-size: 25px;
     color: #ff6600;
     font-family: Arial, Helvetica, sans-serif;
 }
 
-.cardscontainer {
+.cards-container {
     display: flex;
-    gap: 20px;
+    gap: 30px;
     font-family: Arial, Helvetica, sans-serif;
+    margin-left: 50px;
 }
 
 
 .country-heading {
     font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    font-size: 25px;
     display: flex;
     flex-direction: column;
+    color: #ff6600;
+    padding: 30px;
+    margin-left: 20px;
 }
 
 .recommendation-card {
@@ -346,10 +355,22 @@ nav a {
 .recommendation-card h3 {
     padding: 5px 15px 5px;
     font-size: 19px;
+    text-align: center;
 }
 
 .recommendation-card p {
     padding: 5px 15px 15px;
+    text-align: justify;
     line-height: 1.5;
     font-size: 14px;
+}
+
+.mexicoTime {
+    position: absolute;
+    right: 30px;
+    top: 100px;
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    z-index: -10;
 }
